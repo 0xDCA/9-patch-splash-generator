@@ -10,6 +10,12 @@ var $marginLeft = $('#marginLeft');
 var $maxWidth = $('#maxWidth');
 var $maxHeight = $('#maxHeight');
 
+var $inputBackground = $('#inputBackground');
+
+$inputBackground.colorpicker({
+  format: 'hex',
+});
+
 var targetSizes = {
   'drawable-port-ldpi-screen': {
     width: 240,
@@ -70,6 +76,8 @@ function generateCanvases(download) {
     var marginRight = parseFloat($marginRight.val());
     var marginBottom = parseFloat($marginBottom.val());
 
+    var backgroundColor = $inputBackground.val();
+
     var canvases = {};
 
     for (var sizeName in targetSizes) {
@@ -91,7 +99,7 @@ function generateCanvases(download) {
       var context = $canvas[0].getContext('2d');
 
       // White background
-      context.fillStyle = '#FFFFFF';
+      context.fillStyle = backgroundColor;
       context.fillRect(1, 1, contentWidth, contentHeight);
 
       // Find size
