@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Splash generator</title>
+</head>
+<body>
+  <form>
+    <div>
+      <h4>1. Choose source image (SVG preferred)</h4>
+      <input type="file" id="svgInput">
+    </div>
+    <div>
+      <h4>2. Set params</h4>
+
+      <div>
+        <label>Margin top</label>
+        <input type="number" id="marginTop" min="0" step="0.1" value="10">
+      </div>
+
+      <div>
+        <label>Margin right</label>
+        <input type="number" id="marginRight" min="0" step="0.1" value="10">
+      </div>
+
+      <div>
+        <label>Margin down</label>
+        <input type="number" id="marginBottom" min="0" step="0.1" value="10">
+      </div>
+
+      <div>
+        <label>Margin left</label>
+        <input type="number" id="marginLeft" min="0" step="0.1" value="10">
+      </div>
+
+      <div>
+        <label>Max width</label>
+        <input type="number" id="maxWidth" min="0" step="1" value="2000">
+      </div>
+
+      <div>
+        <label>Max height</label>
+        <input type="number" id="maxHeight" min="0" step="1" value="2000">
+      </div>
+    </div>
+    <div>
+      <h4>3. Generate</h4>
+
+      <button type="button" id="submitButton">Generate</button>
+
+      <button type="button" id="downloadButton">Generate and download</button>
+    </div>
+  </form>
+  <div id="canvasContainer">
+  </div>
+
+  <script type="text/javascript" src="lib/jszip.min.js"></script>
+  <script type="text/javascript" src="lib/FileSaver.min.js"></script>
+  <script type="text/javascript" src="lib/jquery-2.2.3.min.js"></script>
+  <script type="text/javascript" src="splash-generator.js"></script>
+</body>
+</html>
